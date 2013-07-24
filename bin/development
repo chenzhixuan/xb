@@ -1,0 +1,2 @@
+==  CreateMerchants: migrating ================================================
+-- create_table(:merchants)
