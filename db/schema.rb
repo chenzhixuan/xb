@@ -11,51 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130722090451) do
+ActiveRecord::Schema.define(version: 20130724101642) do
 
-  create_table "PTSTWEBCONFIG", id: false, force: true do |t|
-    t.string "URL",           limit: 512
-    t.string "OUT_URL",       limit: 512
-    t.string "TM_SMP",        limit: 56
-    t.string "WEB_DESC",      limit: 256
-    t.string "CHK_SESSION",   limit: 12
-    t.string "IS_PERSON",     limit: 12
-    t.string "MENUID",        limit: 12
-    t.string "IS_HTTPS",      limit: 12
-    t.string "DOMAIN",        limit: 56
-    t.string "IS_AJAX",       limit: 12
-    t.string "CONTEXT",       limit: 100
-    t.string "TEAM",          limit: 100
-    t.string "METHOD",        limit: 50
-    t.string "check_referer", limit: 2
-  end
-
-  create_table "histry", id: false, force: true do |t|
-    t.string "date",    limit: 12
-    t.string "time",    limit: 12
-    t.string "domain",  limit: 24
-    t.string "url",     limit: 100
-    t.string "param",   limit: 4086
-    t.string "val",     limit: 4086
-    t.string "version", limit: 20
-  end
-
-  create_table "input", id: false, force: true do |t|
-    t.string "date",   limit: 12
-    t.string "time",   limit: 12
-    t.string "domain", limit: 48
-    t.string "url",    limit: 100
-    t.string "param",  limit: 4086
-    t.text   "val",    limit: 16777215
-  end
-
-  create_table "input2", id: false, force: true do |t|
-    t.string "date",   limit: 12
-    t.string "time",   limit: 12
-    t.string "domain", limit: 24
-    t.string "url",    limit: 100
-    t.string "param",  limit: 4086
-    t.string "val",    limit: 4086
+  create_table "merchants", force: true do |t|
+    t.string   "Name"
+    t.string   "type"
+    t.string   "state"
+    t.string   "mobile"
+    t.string   "logo"
+    t.string   "password"
+    t.string   "info"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "products", force: true do |t|
@@ -64,35 +31,11 @@ ActiveRecord::Schema.define(version: 20130722090451) do
     t.datetime "updated_at"
   end
 
-  create_table "result", id: false, force: true do |t|
-    t.string  "url",     limit: 100
-    t.string  "param",   limit: 4086
-    t.string  "chinese", limit: 4086
-    t.text    "val",     limit: 16777215
-    t.string  "team",    limit: 50
-    t.string  "Risk",    limit: 10
-    t.string  "secret",  limit: 10
-    t.integer "Confir",                   default: 0
-  end
-
-  create_table "resultTemp", force: true do |t|
-    t.string "url",   limit: 100
-    t.string "param", limit: 4086
-    t.text   "val",   limit: 16777215
-  end
-
-  create_table "temp", id: false, force: true do |t|
-    t.string "date",   limit: 12
-    t.string "time",   limit: 12
-    t.string "domain", limit: 24
-    t.string "url",    limit: 100
-    t.string "param",  limit: 4086
-    t.text   "val",    limit: 16777215
-  end
-
-  create_table "test", id: false, force: true do |t|
-    t.string "id",   limit: 20
-    t.string "name", limit: 20
+  create_table "users", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

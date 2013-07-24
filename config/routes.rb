@@ -1,4 +1,6 @@
 Testweb::Application.routes.draw do
+  resources :users
+
   resources :merchants
 
   resources :products
